@@ -1,6 +1,6 @@
                 section         .text
 
-;                global          _start
+                global          _start
 _start:
 
                 sub             rsp, 2 * 128 * 8
