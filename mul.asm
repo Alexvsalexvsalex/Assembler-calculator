@@ -1,6 +1,6 @@
                 section         .text
 
-;                global          _start
+                global          _start
 _start:
 
                 sub             rsp, 3 * 128 * 8
@@ -130,6 +130,7 @@ add_long_long:
                 push            rdi
                 push            rsi
                 push            rcx
+                push            rax
                 ; reset flags
                 clc
 .loop:
@@ -145,6 +146,7 @@ add_long_long:
                 jnz             .loop
 
                 ; set correct values to global data from stack
+                pop             rax
                 pop             rcx
                 pop             rsi
                 pop             rdi
